@@ -1,0 +1,35 @@
+{include _environment.yaml}
+
+class: pyobs.modules.MultiModule
+
+shared:
+    world:
+        class: pyobs.utils.simulation.SimWorld
+        time: "2020-10-21 22:00:00"
+
+        telescope:
+            class: pyobs.utils.simulation.SimTelescope
+
+        camera:
+            class: pyobs.utils.simulation.SimCamera
+
+modules:
+    camera:
+        class: pyobs.modules.camera.DummyCamera
+        comm:
+            class: pyobs.comm.xmpp.XmppComm
+            jid: camera@localhost
+            password: pyobs
+        vfs:
+            class: pyobs.vfs.VirtualFileSystem
+            roots:
+                cache:
+                    class: pyobs.vfs.LocalFile
+                    root: .
+
+    telescope:
+        class: pyobs.modules.telescope.DummyTelescope
+        comm:
+            class: pyobs.comm.xmpp.XmppComm
+            jid: telescope@localhost
+            password: pyobs

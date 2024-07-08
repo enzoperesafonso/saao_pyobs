@@ -1,0 +1,5 @@
+[console_scripts]
+pyobs=pyobs.cli.pyobs:main
+pyobsd=pyobs.cli.pyobsd:main
+pyobsw=pyobs.cli.pyobsw:main
+

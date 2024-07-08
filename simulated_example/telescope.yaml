@@ -1,0 +1,8 @@
+{include _environment.yaml}
+
+class: pyobs.modules.telescope.DummyTelescope
+
+comm:
+    class: pyobs.comm.xmpp.XmppComm
+    jid: telescope@localhost
+    password: pyobs

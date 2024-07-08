@@ -1,0 +1,14 @@
+{include _environment.yaml}
+
+class: pyobs_gui.GUI
+
+comm:
+    class: pyobs.comm.xmpp.XmppComm
+    jid: gui@localhost
+    password: pyobs
+vfs:
+    class: pyobs.vfs.VirtualFileSystem
+    roots:
+        cache:
+            class: pyobs.vfs.LocalFile
+            root: .

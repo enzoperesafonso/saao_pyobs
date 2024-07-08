@@ -1,0 +1,14 @@
+{include _environment.yaml}
+
+class: pyobs.modules.camera.DummyCamera
+
+comm:
+    class: pyobs.comm.xmpp.XmppComm
+    jid: camera@localhost
+    password: pyobs
+vfs:
+    class: pyobs.vfs.VirtualFileSystem
+    roots:
+        cache:
+            class: pyobs.vfs.LocalFile
+            root: .

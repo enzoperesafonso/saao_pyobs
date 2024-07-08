@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/">
+    <file>resources/chart-line-solid.svg</file>
+    <file>resources/search-solid.svg</file>
+    <file>resources/arrow-alt-circle-down-solid.svg</file>
+    <file>resources/arrow-alt-circle-left-solid.svg</file>
+    <file>resources/arrow-alt-circle-up-solid.svg</file>
+    <file>resources/arrow-alt-circle-right-solid.svg</file>
+    <file>resources/arrow-up-right-from-square-solid.svg</file>
+    <file>resources/undo-solid.svg</file>
+    <file>resources/edit-solid.svg</file>
+  </qresource>
+</RCC>
