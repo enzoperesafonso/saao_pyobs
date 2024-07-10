@@ -2,12 +2,12 @@ import tkinter as tk
 import serial
 
 # Open the serial port with the specified parameters
-# ser = serial.Serial('/dev/tty.usbserial-A7003N9w', 9600, timeout=1)
+ser = serial.Serial("/dev/tty.usbserial-A7003N9w", 9600, timeout=1)
 
 
 def send_command(command):
     """Send a command to the serial port."""
-    # ser.write(command.encode())
+    ser.write((command + "\r\n").encode())
     print(f"Sent command to telescope: {command}")
 
 
@@ -28,7 +28,7 @@ def on_key_press(event):
         send_command("#:Me#")
     elif event.keysym == "space":
         label.config(text="STOPPED SLEW !!!", fg="red")
-        send_command("#:Q#")
+        stop_motion()
     elif event.keysym == "2":
         label.config(text="Set Slew Rate to 2 degrees/second", fg="orange")
         send_command("#:Sw 2#")
@@ -40,11 +40,19 @@ def on_key_press(event):
         send_command("#:Sw 4#")
     elif event.keysym == "h":
         label.config(text="Sending Telescope Home ...", fg="purple")
+        send_command(":GR#")
     else:
         label.config(text=f"Key {event.keysym} pressed", fg="black")
 
     # Reset the idle timer
     reset_idle_timer()
+
+
+def stop_motion():
+    send_command("#:Qn#")
+    send_command("#:Qe#")
+    send_command("#:Qs#")
+    send_command("#:Qw#")
 
 
 def reset_idle_timer():
