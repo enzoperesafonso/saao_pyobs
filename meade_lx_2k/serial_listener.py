@@ -2,7 +2,7 @@ import serial
 import time
 
 # Adjust the serial port and baud rate to match your setup
-SERIAL_PORT = 'COM3'  # ls /dev/tty.*  e.g., 'COM3' on Windows or '/dev/ttyUSB0' on Linux
+SERIAL_PORT = '/dev/tty.usbserial-A7003N9w'  # ls /dev/tty.*  e.g., 'COM3' on Windows or '/dev/ttyUSB0' on Linux
 BAUD_RATE = 9600
 
 try:

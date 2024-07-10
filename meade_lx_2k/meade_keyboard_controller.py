@@ -2,7 +2,7 @@ import tkinter as tk
 import serial
 
 # Open the serial port with the specified parameters
-# ser = serial.Serial('COM1', 9600, timeout=1)
+# ser = serial.Serial('/dev/tty.usbserial-A7003N9w', 9600, timeout=1)
 
 
 def send_command(command):
