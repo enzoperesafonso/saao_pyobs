@@ -3,7 +3,7 @@ import threading
 import time
 
 # Define the serial port and baud rate
-serial_port = "/dev/tty.usbserial-A7003N9w"  # Replace with your serial port
+serial_port = "/dev/tty.usbserial-A7003N9w"  # Replace with serial port
 baud_rate = 9600
 
 # Open the serial port with the specified parameters
@@ -73,8 +73,8 @@ if __name__ == "__main__":
     finally:
         ser.close()
 
-    # Set Dec :Sd sDD*MM#     :Sd +15*38#     :Sd +13*38#
-    # Set RA: :Sr HH:MM.T#    :Sr 10:38.0#    :Sr 12:38.0#
+    # Set Dec :Sd sDD*MM#     :Sd +15*38#     :Sd +30*00#
+    # Set RA: :Sr HH:MM.T#    :Sr 10:38.0#    :Sr 08:53.0#
     # Goto set Ra Dec: :MS#
     # Cancel Slew: :Q#
 
