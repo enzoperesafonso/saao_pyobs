@@ -34,7 +34,7 @@ class BaseTelescope(
         wait_for_dome: Optional[str] = None,
         **kwargs: Any,
     ):
-        """Initialize a new base telescope.
+        """Initialize a new Meade LX 2000 telescope.
 
         Args:
             fits_headers: Additional FITS headers to send.
@@ -58,7 +58,6 @@ class BaseTelescope(
         self.add_background_task(self._celestial, True)
 
         # init mixins
-        WeatherAwareMixin.__init__(self, **kwargs)
         MotionStatusMixin.__init__(self, **kwargs)
         WaitForMotionMixin.__init__(
             self,
@@ -75,7 +74,6 @@ class BaseTelescope(
         await Module.open(self)
 
         # open mixins
-        await WeatherAwareMixin.open(self)
         await MotionStatusMixin.open(self)
 
     @abstractmethod
